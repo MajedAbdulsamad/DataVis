@@ -1,0 +1,112 @@
+body{
+    font-family: 'Roboto Condensed', 
+    helvetica, sans-serif;
+}
+
+div.title{
+    width: 100%;
+    height: 200%;
+}
+
+h1{ 
+    
+    font-weight: 400;
+    font-size: 2.5em;
+    max-width: 800px;
+    text-align: center;
+    margin: 25px, 25px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+
+h2{
+    text-align: center;
+}
+
+h3{
+    font-size: 1.25em;
+    font-weight: 300;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 1px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    color: #000000;
+}
+
+div.bio{
+    max-width: 800px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img.bioImage{
+    width: 100%;
+    margin: auto;
+    display: block;
+}
+
+p.bioText{
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.05em;
+    line-height: 130%;
+    word-wrap: break-word;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+p.bioText > a{
+
+text-align: center;
+margin-right: auto;
+margin-left: auto;
+    color: #000000;
+}
+
+p.bioText > a:hover{
+    background-color: #000000; 
+}
+
+div.linkList{
+    max-width: 800px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div {
+    word-wrap: break-word;
+    width: 500px
+}
+
+li.assignmentLink{
+    font-weight: 300;
+    font-size: 1.05em;
+    line-height: 130%;
+}
+
+li.assignmentLink > a{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    color: #000000;
+}
+
+li.assignmentLink > a:hover{
+    background-color: #FFFFFF; 
+}
+
+.rotateimg90 {
+  -webkit-transform:rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
