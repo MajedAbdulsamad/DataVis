@@ -10,20 +10,22 @@
 <script language="javascript" type="text/javascript" src="../js/tutorial.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
 
-
 <h1>La Liga Standings Tutorial</h1>
 <h3>Feb 24</h3>
 
 
+<div id="map" style="width:400px; height:400px"> Spanish League Map </div>
 
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCPtze3-eHppZ0TDfpszUvogE8jZoEKJBQ
-    &q=Space+Needle,Seattle+WA" allowfullscreen>
-</iframe>
-
+<script>
+function myMap(){
+var mapOptions ={
+	center: new
+google.maps.LatLng(51.5,-0.12),
+zoom:10,
+mapTypeId: google.maps.mapTypeId.HYBRID}
+var map= new
+google.maps.Map(document.getElemenntById("map"), mapOptions);
+</script>
 </body>
 
 </html>
