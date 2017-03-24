@@ -62,12 +62,12 @@ function drawButtons(){
         }
         stroke(0);
         strokeWeight(1);
-        rect(50 + 80* i, 30, 50, 50)
-        fill(0);
+        ellipse(75 + 80* i, 60, 50, 50)
+        fill(0,0,0);
         noStroke();
         textAlign(CENTER, CENTER);
-        textSize(10);
-        text(headers[i], 75+80*i, 90)
+        textSize(9);
+        text(headers[i], 75+80*i, 100)
         };
 
 }
@@ -76,9 +76,11 @@ function showDetails(){
     if (mouseY>101){
     var selectedRow=0;
     selectedRow = floor((mouseY- 100) / 14);
-    text(topRefugeesTable.getString(selectedRow, 'Country'), 900, 150);
-    text(topRefugeesTable.getNum(selectedRow, 'Total'), 900, 180);
-    text(topRefugeesTable.getNum(selectedRow, 'Asylum-seekers'), 900, 210);
+    fill(0);
+    textSize(18);
+    text(topRefugeesTable.getString(selectedRow, 'Country'), 250, 150);
+    text(topRefugeesTable.getNum(selectedRow, 'Total'), 250, 180);
+    text(topRefugeesTable.getNum(selectedRow, 'Asylum-seekers'), 250, 210);
     
 }
 }
@@ -113,9 +115,10 @@ function mousePressed(){
 }
 
 function drawCountries(category){
-    fill(0);
+    fill(0,138,138);
     noStroke();
     textAlign(LEFT, TOP);
+    textSize(10);
     maxTotal=0;
       for (var i = 0; i < topRefugeesTable.getRowCount(); i++) {
       maxTotal = max(maxTotal, topRefugeesTable.getNum(i, category));
