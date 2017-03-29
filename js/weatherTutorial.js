@@ -86,6 +86,6 @@ function draw() {
       text('The current temperature in '+ selectedCity[j] + ' is ' + temperature, 200, 200);
     }
     else {
-      text('Loading...', 20, 20);
+      text('Loading...', 200, 200);
     }
 }
