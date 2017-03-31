@@ -2,6 +2,10 @@ body{
     font-family: 'Roboto Condensed', 
     helvetica, sans-serif;
 }
+ 
+canvas#viewport { 
+    border: 1px solid white; width: 900px;
+     }
 
 div.title{
     width: 100%;
@@ -88,6 +92,7 @@ div {
 
 li.assignmentLink{
     font-weight: 300;
+    color: 255;
     font-size: 1.05em;
     line-height: 130%;
 }

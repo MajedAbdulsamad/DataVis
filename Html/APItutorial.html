@@ -6,7 +6,7 @@
     body 
   
 </style>
-
+<canvas id="canvas">Non-Cliche Open Weather Map</canvas>
    <!-- Stylesheet link -->
     <link rel="stylesheet" type="text/css" href="../css/site-specific.css">
 
@@ -17,12 +17,22 @@
  <script language="javascript" type="text/javascript" src="../libraries/addons/p5.dom.js"></script>
     <!-- Link to p5 sketch file -->
     <script language="javascript" type="text/javascript" src="../js/weatherTutorial.js"></script>
+ <canvas id="myCanvas" width="578" height="400"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var imageObj = new Image();
 
+      imageObj.onload = function() {
+        context.drawImage(imageObj, 69, 50);
+      };
+      imageObj.src = 'WorldMap.jpg';
+    </script>
   </head>
-  
-       <p> Open Weather Map </p>
+
+       <p> Open Weather Map Test Website </p>
     <div class="linkList">
-    
+
     
     </div>
   </body>

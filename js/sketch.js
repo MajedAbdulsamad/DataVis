@@ -9,7 +9,7 @@ var startChartX=250;
 var selectedButton =5;
 
 
-
+ 
 
 // ***** Preload function ***** //
 function preload(){
@@ -138,7 +138,7 @@ function drawCountries(category){
 // ***** Draw function ***** //
 function draw(){
     background(255);
-    // drawCountries(refugeeTable);
+    //drawCountries(refugeeTable);
     drawCountries(headers[selectedButton]);
     drawButtons();
     noStroke();
