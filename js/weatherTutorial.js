@@ -3,8 +3,7 @@ var weatherData;
 var apiKey = '176d293c90dad47eec4535f35ec1a4fb';
 var baseURL = 'http://api.openweathermap.org/data/2.5/weather?q=';
 var units = 'imperial';
-var selectedCity= ['Chicago','New York','Bogota','Paris','Catania','Beirut','Damascus','Tokyo','Sydney',
-'Toronto', 'San Fran', 'Tunisia', 'Cairo','Tehran','Casablanca'];
+var selectedCity= ['San Francisco','Chicago','New York','Paris','Beirut','Cairo'];
 var j=0;
 var selectedButton=0;
 var temperature=0;
@@ -12,20 +11,20 @@ var city;
 var request;
 var img;
 
-function preload(){
-  img= loadImage("../img/WorldMap.jpg")
-  console.log('image loaded')
-}
+
 
 // ***** Setup function ***** //
-function setup(){
-    createCanvas(1250, 1250); 
-    image(img, 200, 200);
-    request = baseURL + selectedCity[j] + '&units=' + units + '&apikey=' + apiKey;
+function setup() {
+  createCanvas(2000, 2000);
+  img = loadImage("../img/wm4.jpg");  // Load the image
+}
+
+
+function APIquery(){ 
+   request = baseURL + selectedCity[j] + '&units=' + units + '&apikey=' + apiKey;
     loadJSON(request, getWeatherData);
     
 }
-
 
 // function makeBase()
 // {
@@ -43,36 +42,27 @@ function getWeatherData(apiData){
  
 }
 
-function APIquery(){
-   for (var j = 0; j < selectedCity; i++) {
-    if(selectedCity==j){
-      print (weatherData.main.temp[j]); 
-    }
-    else{
 
-    }
-  }
-}
 function drawButtons(){
     
     for (var i = 0; i < selectedCity.length; i++) {
         if (selectedButton== i) {
-            fill(0,138,138);
+            fill(255,255,255);
             
         }
         else {
 
-            fill(235)
+            fill(35)
 
         }
-        stroke(0);
-        noStroke();
-        ellipse(75 + 80* i, 60, 50, 50)
-        fill(100);
-        noStroke();
-        textAlign(CENTER, CENTER);
-        textSize(18);
-        text(selectedCity[i], 75+80*i, 100)
+        stroke(100);
+        ellipse(450 , 350, 50, 50)
+        ellipse(650 , 300, 50, 50)
+        ellipse(750 , 380, 50, 50)
+        ellipse(1150 , 380, 50, 50)
+ellipse(1300 , 450, 50, 50)
+ellipse(1260 , 500, 50, 50)
+
         };
 
 }
@@ -83,7 +73,7 @@ function updateApiRequest(){
 }
 
 function mousePressed(){
-  if (mouseX > 50 && mouseX < 100 && mouseY > 25 && mouseY < 80){
+  if (mouseX > 420 && mouseX < 470 && mouseY > 330 && mouseY < 380){
     selectedButton = 0; j=0;
     updateApiRequest();
      // request = baseURL + selectedCity[j] + '&units=' +
@@ -91,88 +81,70 @@ function mousePressed(){
      // print(request);
      // loadJSON(request, getWeatherData);
   }
-  if (mouseX > 130 && mouseX < 180 && mouseY > 25 && mouseY < 80){
+  if (mouseX > 620 && mouseX < 680 && mouseY > 270 && mouseY < 330){
     selectedButton = 1; j=1;
         updateApiRequest();
 }
 
-  if (mouseX > 208 && mouseX < 260 && mouseY > 25 && mouseY < 80){
+  if (mouseX > 710 && mouseX < 780 && mouseY > 350 && mouseY < 410){
     selectedButton = 2;j=2;         updateApiRequest();
 
   }
-  if (mouseX > 290 && mouseX < 340 && mouseY > 25 && mouseY < 80){
+  if (mouseX > 1120 && mouseX < 1180 && mouseY > 350 && mouseY < 410){
     selectedButton = 3;j=3;        updateApiRequest();
 
   }
-  if (mouseX > 370 && mouseX < 420 && mouseY > 25 && mouseY < 80){
+  if (mouseX > 1260 && mouseX < 1320 && mouseY > 400 && mouseY < 480){
     selectedButton = 4;j=4;        updateApiRequest();
 
   }
-  if (mouseX > 450 && mouseX < 500 && mouseY > 25 && mouseY < 80){
+  if (mouseX > 1220 && mouseX < 1270 && mouseY > 450 && mouseY < 520){
     selectedButton = 5;j=5;
         updateApiRequest();
   }
-  if (mouseX > 530 && mouseX < 580 && mouseY > 25 && mouseY < 80){
-    selectedButton = 6;j=6;
-        updateApiRequest();
-  }
-  if (mouseX > 600 && mouseX < 660 && mouseY > 25 && mouseY < 80){
-    selectedButton = 7;j=7;
-        updateApiRequest();
-  }
-  if (mouseX > 690 && mouseX < 740 && mouseY > 25 && mouseY < 80){
-    selectedButton = 8;j=8;
-        updateApiRequest();
-  }
-  if (mouseX > 770 && mouseX < 830 && mouseY > 25 && mouseY < 80){
-    selectedButton = 9;j=9;
-        updateApiRequest();
-  }
-  if (mouseX > 860 && mouseX < 920 && mouseY > 25 && mouseY < 80){
-    selectedButton = 10;j=10;
-        updateApiRequest();
-  }
-  if (mouseX > 940 && mouseX < 1000 && mouseY > 25 && mouseY < 80){
-    selectedButton = 11;j=11;
-        updateApiRequest();
-  }
-  if (mouseX > 1020 && mouseX < 1070 && mouseY > 25 && mouseY < 80){
-    selectedButton = 12;j=12;
-        updateApiRequest();
-  }
-  if (mouseX > 1100 && mouseX < 1160 && mouseY > 25 && mouseY < 80){
-    selectedButton = 13;j=13;
-        updateApiRequest();
-  }
-  if (mouseX > 1180 && mouseX < 1260 && mouseY > 25 && mouseY < 80){
-    selectedButton = 14;j=14;
-        updateApiRequest();
-  }
+  
 }
 
 
 
-function draw() {
-    background(255);
+// function showDetails(){
+//     if (mouseY>101){
+//     var selectedRow=0;
+//     selectedRow = floor((mouseY- 100) / 14);
+//     fill(0);
+//     textSize(18);
+//     text(topRefugeesTable.getString(selectedRow, 'Country'), 250, 150);
+//     text(topRefugeesTable.getNum(selectedRow, 'Total'), 250, 180);
+//     text(topRefugeesTable.getNum(selectedRow, 'Asylum-seekers'), 250, 210);
     
+// }
+// }
+
+function draw() {
+  // Displays the image at its actual size at point (0,0)
+  image(img, 100 ,0,1944, 1228);
+  
     fill(150);
     drawButtons();
-    textSize(18);
+    textSize(24);
     textAlign (LEFT, RIGHT);
     if (weatherData) {
-      fill(50)
-      text('The current temperature in ',200,200);
-      textSize(36);
+      fill(0,138,138)
+      text('The current temperature in ',800,300);
+      textSize(48);
+      fill(0,150,150);
+      text(selectedCity[j],850,350);
+      textSize(24) ;
       fill(0,138,138);
-      text(selectedCity[j],300,230);
-      textSize(18) ;
-      fill(100);
-      text(' is ',415,260);
-      textSize(36) ;
+      text(' is ',900,375);
+      textSize(60) ;
       fill(0,138,138);
-      text(temperature, 400,290);
+      text(temperature, 900,450);
     }
     else {
-      text('Failed to load ;(', 200, 200);
+      text('Select a city to begin', 800, 400);
     }
+
+      // text(str(mouseX) + ', ' + str(round(mouseY)), mouseX, mouseY);
+
 }
