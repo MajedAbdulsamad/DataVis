@@ -70,7 +70,7 @@ function drawButtons(){
         text(headers[i], 75+80*i, 100)
         };
 
-}
+} 
 
 function showDetails(){
     if (mouseY>101){

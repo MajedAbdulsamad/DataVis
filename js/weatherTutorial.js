@@ -52,10 +52,10 @@ function drawButtons(){
         }
         else {
 
-            fill(35)
+            noFill()
 
         }
-        stroke(100);
+        stroke(5);
         ellipse(450 , 350, 50, 50)
         ellipse(650 , 300, 50, 50)
         ellipse(750 , 380, 50, 50)
